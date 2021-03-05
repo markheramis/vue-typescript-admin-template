@@ -47,7 +47,7 @@
         :xl="{span: 12}"
         style="padding-right:8px;margin-bottom:30px;"
       >
-        <transaction-table />
+      <!-- <transaction-table /> -->
       </el-col>
       <el-col
         :xs="{span: 24}"
@@ -84,7 +84,7 @@ import PanelGroup from './components/PanelGroup.vue'
 import PieChart from './components/PieChart.vue'
 import RadarChart from './components/RadarChart.vue'
 import TodoList from './components/TodoList/index.vue'
-import TransactionTable from './components/TransactionTable.vue'
+// import TransactionTable from './components/TransactionTable.vue'
 
 const lineChartData: { [type: string]: ILineChartData } = {
   newVisitis: {
@@ -115,8 +115,8 @@ const lineChartData: { [type: string]: ILineChartData } = {
     PanelGroup,
     PieChart,
     RadarChart,
-    TodoList,
-    TransactionTable
+    TodoList
+    // TransactionTable
   }
 })
 export default class extends Vue {
