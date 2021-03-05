@@ -12,12 +12,12 @@ interface ISettings {
 
 // You can customize below settings :)
 const settings: ISettings = {
-  title: 'Vue Typescript Admin',
+  title: 'Radicall',
   showSettings: true,
   showTagsView: true,
   fixedHeader: false,
   showSidebarLogo: false,
-  errorLog: ['production'],
+  errorLog: ['development'],
   sidebarTextTheme: true,
   devServerPort: 9527,
   mockServerPort: 9528
