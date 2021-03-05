@@ -85,6 +85,7 @@ import HeaderSearch from '@/components/HeaderSearch/index.vue'
 import LangSelect from '@/components/LangSelect/index.vue'
 import Screenfull from '@/components/Screenfull/index.vue'
 import SizeSelect from '@/components/SizeSelect/index.vue'
+import { MessageBox } from 'element-ui'
 
 @Component({
   name: 'Navbar',
@@ -116,9 +117,19 @@ export default class extends Vue {
   }
 
   private async logout() {
-    await UserModule.LogOut()
-    this.$router.push(`/login?redirect=${this.$route.fullPath}`).catch(err => {
-      console.warn(err)
+    MessageBox.confirm('Are you sure you want to logout?', 'Confirm Logout', {
+      confirmButtonText: 'OK',
+      cancelButtonText: 'Cancel',
+      type: 'warning'
+    }).then(action => {
+      if (action === 'confirm') {
+        UserModule.LogOut()
+        this.$router.push(`/login?redirect=${this.$route.fullPath}`).catch(err => {
+          console.log(err)
+        })
+      }
+    }).catch(error => {
+      console.log(error)
     })
   }
 }
