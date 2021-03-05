@@ -1,4 +1,7 @@
-export const isValidUsername = (str: string) => ['admin', 'editor'].indexOf(str.trim()) >= 0
+export const isValidUsername = (str: string) => { // ['admin', 'editor'].indexOf(str.trim()) >= 0
+  const reg = /(\w.)/
+  return reg.test(str)
+}
 
 export const isExternal = (path: string) => /^(https?:|mailto:|tel:)/.test(path)
 
